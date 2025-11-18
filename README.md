@@ -1,0 +1,2 @@
+# Final-project-M2-Combustion-of-methane-in-a-countercurrent-configuration
+The objective of this project is to simulate the combustion of methane in air in a counter-current configuration. Methane and air are injected opposite each other in opposite directions, and nitrogen is injected in the same way at the top and bottom of the simulation chamber to dilute and protect the other two gases from external variations
