@@ -32,19 +32,7 @@ Once the velocity field is known, we solve the transport equation for nitrogen t
 ### Full species transport + combustion temperature**
 Finally, we simulate the transport of all chemical species participating in the reaction, and compute the associated temperature evolution. This allows us to estimate the maximum flame temperature during combustion. For an ideal methane–air flame, the expected peak temperature ranges between 1700 and 2500 K, which serves as a reference to validate the simulation.
 
-## Repository Structure
-
-M2-projects/
-│── notebooks/
-│ └── Final_Project_Combustion_Methane.ipynb
-│── src/
-│── data/
-│── figures/
-│── README.md
-│── requirements.txt
-
 ## How to Run the Notebook
-
 1. Install dependencies: pip install -r requirements.txt
 2. Open the notebook: jupyter notebook notebooks/Final_Project_Combustion_Methane.ipynb
 3. Run the cells in order.
