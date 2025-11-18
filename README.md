@@ -13,7 +13,6 @@ the combustion behavior and identify key physical quantities such as deformation
 diffusion zones, and peak temperature during the reaction.
 
 ## Objectives of the Project
-
 ### - Solve the flow field
 We first solve the Navier–Stokes equations using a first-order fractional step method  
 to obtain the velocity components:
@@ -22,9 +21,9 @@ to obtain the velocity components:
 
 From the velocity field, we compute the deformation rate on the left wall:
 
-\[
+$
 a = \frac{dv}{dy}
-\]
+$
 
 This quantity is essential for understanding fluid–wall interactions, shear forces, and flow regime.
 
