@@ -19,38 +19,32 @@ to obtain the velocity components:
 - u(x, y) (horizontal velocity)  
 - v(x, y) (vertical velocity)  
 
-From the velocity field, we compute the deformation rate on the left wall:
+From the velocity field, we compute the deformation rate on the left wall: $a = \frac{dv}{dy}$. This quantity is essential for understanding fluid–wall interactions, shear forces, and flow regime.
 
-$$
-a = \frac{dv}{dy}
-$$
-
-
-This quantity is essential for understanding fluid–wall interactions, shear forces, and flow regime.
-
----
-
-### **2. Transport of nitrogen**
-Nitrogen behaves as a **spectator species** in the combustion process:
+### Transport of nitrogen
+Nitrogen behaves as a spectator species in the combustion process:
 - It is not consumed  
 - It does not affect temperature  
 - It is simply convected and diffused  
 
-Once the velocity field is known, we solve the transport equation for nitrogen to determine  
-the **diffusive penetration zone** along the left boundary.  
-This information is relevant for analyzing mixing, boundary layer development, and process optimization.
+Once the velocity field is known, we solve the transport equation for nitrogen to determine the diffusive penetration zone along the left boundary. This information is relevant for analyzing mixing, boundary layer development, and process optimization.
 
----
+### Full species transport + combustion temperature**
+Finally, we simulate the transport of all chemical species participating in the reaction, and compute the associated temperature evolution. This allows us to estimate the maximum flame temperature during combustion. For an ideal methane–air flame, the expected peak temperature ranges between 1700 and 2500 K, which serves as a reference to validate the simulation.
 
-### **3. Full species transport + combustion temperature**
-Finally, we simulate the transport of **all chemical species** participating in the reaction,  
-and compute the associated **temperature evolution**.  
-This allows us to estimate the **maximum flame temperature** during combustion.
+## Repository Structure
 
-For an ideal methane–air flame, the expected peak temperature ranges between **1700 and 2500 K**,  
-which serves as a reference to validate the simulation.
+M2-projects/
+│── notebooks/
+│ └── Final_Project_Combustion_Methane.ipynb
+│── src/
+│── data/
+│── figures/
+│── README.md
+│── requirements.txt
 
----
+## How to Run the Notebook
 
-## 📁 Repository Structure
-
+1. Install dependencies: pip install -r requirements.txt
+2. Open the notebook: jupyter notebook notebooks/Final_Project_Combustion_Methane.ipynb
+3. Run the cells in order.
