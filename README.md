@@ -21,9 +21,7 @@ to obtain the velocity components:
 
 From the velocity field, we compute the deformation rate on the left wall:
 
-$
-a = \frac{dv}{dy}
-$
+$ a = \frac{dv}{dy} $
 
 This quantity is essential for understanding fluid–wall interactions, shear forces, and flow regime.
 
