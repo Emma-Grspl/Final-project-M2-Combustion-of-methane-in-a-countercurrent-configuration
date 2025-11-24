@@ -36,3 +36,11 @@ Finally, we simulate the transport of all chemical species participating in the 
 1. Install dependencies: pip install -r requirements.txt
 2. Open the notebook: jupyter notebook notebooks/Final_Project_Combustion_Methane.ipynb
 3. Run the cells in order.
+
+mkdir src
+mkdir src/counterflow
+mkdir notebooks
+mkdir examples
+mkdir tests
+touch src/counterflow/__init__.py
+
