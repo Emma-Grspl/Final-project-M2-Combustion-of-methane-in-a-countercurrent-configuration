@@ -59,7 +59,7 @@ For a methane–air flame, the expected peak temperature is **1700–2500 K**, p
 ---
 
 # 📁 Project Structure
-
+```bash
 combustion-counterflow/
 │
 ├── src/
@@ -89,7 +89,7 @@ combustion-counterflow/
 ├── requirements.txt
 └── LICENSE
 
-
+```
 
 ---
 
@@ -97,7 +97,6 @@ combustion-counterflow/
 
 ## 1. Install dependencies
 
-```bash
 pip install -r requirements.txt
 
 ## 2. Run notebooks
