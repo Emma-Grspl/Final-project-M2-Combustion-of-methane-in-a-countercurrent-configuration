@@ -1,46 +1,90 @@
-# Simulation of Counter-Current Methane Combustion (M2 Project)
+# 🚀 Simulation of Counter-Current Methane Combustion  
+### *Master 2 Project — École Polytechnique*
 
-This project simulates methane–air combustion in a counter-current configuration. 
-Methane and air are injected face-to-face in opposite directions, while nitrogen is injected 
-from the upper and lower boundaries to dilute and stabilize the system. The computational 
-domain measures 2 mm × 2 mm and features mixed boundary conditions:
-- left wall: slip boundary  
-- right wall: open boundary  
-- top and bottom: no-slip, except injection zones  
+This project simulates methane–air combustion in a **counterflow configuration**.  
+Methane is injected from the left boundary, air from the right boundary, and nitrogen is injected from the upper and lower boundaries to dilute and stabilize the system.
 
-The goal of this work is to solve the flow, species transport, and thermal chemistry to analyze 
-the combustion behavior and identify key physical quantities such as deformation rates, 
-diffusion zones, and peak temperature during the reaction.
+The computational domain measures **2 mm × 2 mm** and includes mixed boundary conditions:
 
-## Objectives of the Project
-### Solve the flow field
-We first solve the Navier–Stokes equations using a first-order fractional step method  
-to obtain the velocity components:
-- u(x, y) (horizontal velocity)  
-- v(x, y) (vertical velocity)  
+| Boundary      | Condition                     |
+|---------------|------------------------------|
+| Left wall     | Slip boundary                |
+| Right wall    | Open boundary                |
+| Top / Bottom  | No-slip (except injections)  |
 
-From the velocity field, we compute the deformation rate on the left wall: $a = \frac{dv}{dy}$. This quantity is essential for understanding fluid–wall interactions, shear forces, and flow regime.
+The goals of this work are to solve the **flow field**, **species transport**, and **chemical reaction** to analyze the combustion behavior.
 
-### Transport of nitrogen
-Nitrogen behaves as a spectator species in the combustion process:
+---
+
+# 🔥 Project Objectives
+
+## 1. Solve the Flow Field  
+We solve the **2D Navier–Stokes equations** using a **first-order fractional-step method** to compute:
+
+- \( u(x, y) \) — horizontal velocity  
+- \( v(x, y) \) — vertical velocity  
+
+From the velocity field, we compute the **strain rate** on the left wall:
+
+\[
+a = \frac{\partial v}{\partial y}
+\]
+
+This is essential to understand fluid–wall interactions and shear dynamics.
+
+---
+
+## 2. Nitrogen Transport  
+Nitrogen behaves as a spectator species:
+
 - It is not consumed  
 - It does not affect temperature  
-- It is simply convected and diffused  
+- It undergoes convection and diffusion only  
 
-Once the velocity field is known, we solve the transport equation for nitrogen to determine the diffusive penetration zone along the left boundary. This information is relevant for analyzing mixing, boundary layer development, and process optimization.
+Using the computed velocity field, we solve the transport equation for \(Y_{N_2}\) to determine the **diffusive penetration zone** along the left boundary.
 
-### Full species transport + combustion temperature**
-Finally, we simulate the transport of all chemical species participating in the reaction, and compute the associated temperature evolution. This allows us to estimate the maximum flame temperature during combustion. For an ideal methane–air flame, the expected peak temperature ranges between 1700 and 2500 K, which serves as a reference to validate the simulation.
+---
 
-## How to Run the Notebook
-1. Install dependencies: pip install -r requirements.txt
-2. Open the notebook: jupyter notebook notebooks/Final_Project_Combustion_Methane.ipynb
-3. Run the cells in order.
+## 3. Full Species Transport + Combustion Temperature  
+We simulate the transport and reaction of all key species:
 
-mkdir src
-mkdir src/counterflow
-mkdir notebooks
-mkdir examples
-mkdir tests
-touch src/counterflow/__init__.py
+- CH₄  
+- O₂  
+- CO₂  
+- H₂O  
+
+The temperature field is then computed from the reaction terms.  
+For a methane–air flame, the expected peak temperature is **1700–2500 K**, providing a reference for validation.
+
+---
+
+# 📁 Project Structure
+
+combustion-counterflow/
+│
+├── src/
+│ └── counterflow/
+│ ├── init.py
+│ ├── config.py
+│ ├── grid.py
+│ ├── navier_stokes.py
+│ ├── transport.py
+│ └── combustion.py
+│
+├── notebook/
+│ ├── 01_velocity_field.ipynb
+│ ├── 02_transport_N2.ipynb
+│ └── 03_combustion.ipynb
+│
+├── examples/
+│ └── run_full_simulation.py
+│
+├── tests/
+│ ├── test_navier_stokes.py
+│ ├── test_transport.py
+│ └── test_combustion.py
+│
+├── figures/
+├── requirements.txt
+└── LICENSE
 
