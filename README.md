@@ -63,28 +63,47 @@ For a methane–air flame, the expected peak temperature is **1700–2500 K**, p
 combustion-counterflow/
 │
 ├── src/
-│ └── counterflow/
-│ ├── init.py
-│ ├── config.py
-│ ├── grid.py
-│ ├── navier_stokes.py
-│ ├── transport.py
-│ └── combustion.py
+│   └── counterflow/
+│       ├── __init__.py
+│       ├── config.py
+│       ├── grid.py
+│       ├── navier_stokes.py
+│       ├── transport.py
+│       └── combustion.py
 │
 ├── notebook/
-│ ├── 01_velocity_field.ipynb
-│ ├── 02_transport_N2.ipynb
-│ └── 03_combustion.ipynb
+│   ├── 01_velocity_field.ipynb
+│   ├── 02_transport_N2.ipynb
+│   └── 03_combustion.ipynb
 │
 ├── examples/
-│ └── run_full_simulation.py
+│   └── run_full_simulation.py
 │
 ├── tests/
-│ ├── test_navier_stokes.py
-│ ├── test_transport.py
-│ └── test_combustion.py
+│   ├── test_navier_stokes.py
+│   ├── test_transport.py
+│   └── test_combustion.py
 │
 ├── figures/
+│
 ├── requirements.txt
 └── LICENSE
 
+
+
+---
+
+# ▶️ How to Run the Project
+
+## 1. Install dependencies
+
+```bash
+pip install -r requirements.txt
+
+## 2. Run notebooks
+
+jupyter notebook
+
+## 3. Run a full simulation without notebooks
+
+python examples/run_full_simulation.py
