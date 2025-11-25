@@ -1,58 +1,48 @@
 import numpy as np
 
-def create_grid(Lx: float, Nx: int):
-    """
-    Create a 2D uniform Cartesian grid.
+"""
+config.py — Default simulation parameters for the counterflow combustion project.
+"""
 
-    Parameters :
-    Lx : float
-        Domain length in x-direction (meters).
-    Nx : int
-        Number of grid points in x-direction.
+def get_config():
+    """
+    Return a dictionary with all default simulation parameters.
 
     Returns :
-    x, y, dx, dy : arrays and floats
-        x and y are 2D arrays of grid coordinates.
-        dx and dy are the grid spacings.
+    dict
+    Dictionary containing physical and numerical parameters.
     """
-    dx = Lx / (Nx - 1)
-    dy = Lx / (Nx - 1)
+    cfg = {}
 
-    x_vec = np.linspace(0, Lx, Nx)
-    y_vec = np.linspace(0, Lx, Nx)
-    x, y = np.meshgrid(x_vec, y_vec, indexing='ij')
+    # ---- Physical constants ----
+    cfg["rho"] = 1.1614          # kg/m^3 (air)
+    cfg["nu"] = 15e-6            # m^2/s kinematic viscosity
+    cfg["D"] = 15e-6             # m^2/s species diffusivity
+    cfg["cp"] = 1200             # J/kg/K
 
-    return x, y, dx, dy
+    # ---- Domain size ----
+    cfg["Lx"] = 0.002            # m
+    cfg["Ly"] = 0.002            # m
+
+    # ---- Grid resolution ----
+    cfg["Nx"] = 50
+    cfg["Ny"] = 50
+
+    # ---- Time parameters ----
+    cfg["Tf"] = 0.01             # final time (s)
+    cfg["Nt"] = 3000             # number of time steps
+
+    cfg["dt"] = cfg["Tf"] / (cfg["Nt"] - 1)
+
+    return cfg
 
 
-def allocate_field(Nx: int, value: float = 0.0):
+def default_params():
     """
-    Allocate a 2D scalar field (e.g., pressure, temperature, species).
+    Alias for get_config(), used for cleaner API.
 
-    Parameters :
-    Nx : int
-        Dimensions of the field.
-    value : float, optional
-        Initial value of the field, by default 0.0.
-
-    Returns :
-    np.ndarray
-        A (Nx, Nx) array filled with `value`.
+    Returns:
+    dict
+    Default simulation parameters.
     """
-    return value * np.ones((Nx, Nx), dtype=float)
-
-def allocate_velocity_fields(Nx: int):
-    """
-    Allocate the velocity fields u and v.
-
-    Parameters :
-    Nx: int
-        Grid dimensions.
-
-    Returns :
-    u, v : np.ndarray
-        Two (Nx, Nx) arrays initialized to zero.
-    """
-    u = np.zeros((Nx, Nx), dtype=float)
-    v = np.zeros((Nx, Nx), dtype=float)
-    return u, v
+    return get_config()
