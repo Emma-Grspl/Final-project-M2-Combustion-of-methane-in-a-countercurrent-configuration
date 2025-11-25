@@ -16,37 +16,25 @@ We solve the 2D Navier–Stokes equations using a first-order fractional-step me
 - u(x, y) — horizontal velocity  
 - v(x, y) — vertical velocity  
 
-From the velocity field, we compute the strain rate on the left wall: $ a = \frac{\partial v}{\partial y} $
+From the velocity field, we compute the strain rate on the left wall: a = dv/dy. This is essential to understand fluid–wall interactions and shear dynamics.
 
-This is essential to understand fluid–wall interactions and shear dynamics.
-
----
-
-## 2. Nitrogen Transport  
+### Nitrogen Transport  
 Nitrogen behaves as a spectator species:
-
 - It is not consumed  
 - It does not affect temperature  
 - It undergoes convection and diffusion only  
 
-Using the computed velocity field, we solve the transport equation for \(Y_{N_2}\) to determine the **diffusive penetration zone** along the left boundary.
+Using the computed velocity field, we solve the transport equation for YN2 to determine the diffusive penetration zone along the left boundary.
 
----
-
-## 3. Full Species Transport + Combustion Temperature  
+### Full Species Transport + Combustion Temperature  
 We simulate the transport and reaction of all key species:
+- CH4  
+- O2 
+- CO2  
+- H20  
+The temperature field is then computed from the reaction terms. For a methane–air flame, the expected peak temperature is 1700–2500 K, providing a reference for validation.
 
-- CH₄  
-- O₂  
-- CO₂  
-- H₂O  
-
-The temperature field is then computed from the reaction terms.  
-For a methane–air flame, the expected peak temperature is **1700–2500 K**, providing a reference for validation.
-
----
-
-# 📁 Project Structure
+## Project Structure
 ```bash
 combustion-counterflow/
 │
@@ -79,18 +67,16 @@ combustion-counterflow/
 
 ```
 
----
+## How to Run the Project
 
-# ▶️ How to Run the Project
-
-## 1. Install dependencies
+### Install dependencies
 
 pip install -r requirements.txt
 
-## 2. Run notebooks
+### Run notebooks
 
 jupyter notebook
 
-## 3. Run a full simulation without notebooks
+## # Run a full simulation without notebooks
 
 python examples/run_full_simulation.py
