@@ -1,25 +1,17 @@
-# 🚀 Simulation of Counter-Current Methane Combustion  
-### *Master 2 Project — École Polytechnique*
+# Simulation of Counter-Current Methane Combustion  
+### Master 2 Project — Plasma and fusion physics - Ecole Polytechnique
 
-This project simulates methane–air combustion in a **counterflow configuration**.  
-Methane is injected from the left boundary, air from the right boundary, and nitrogen is injected from the upper and lower boundaries to dilute and stabilize the system.
+This project simulates methane–air combustion in a counterflow configuration. Methane is injected from the left boundary, air from the right boundary, and nitrogen is injected from the upper and lower boundaries to dilute and stabilize the system. The computational domain measures 2 mm × 2 mm and includes mixed boundary conditions:
+- Left wall : Slip boundary
+- Right wall : Open boundary
+- Top/bottom wall : No slip boundary (except injections)
 
-The computational domain measures **2 mm × 2 mm** and includes mixed boundary conditions:
+The goals of this work are to solve the flow field, species transport, and chemical reaction to analyze the combustion behavior.
 
-| Boundary      | Condition                     |
-|---------------|------------------------------|
-| Left wall     | Slip boundary                |
-| Right wall    | Open boundary                |
-| Top / Bottom  | No-slip (except injections)  |
+## Project Objectives
 
-The goals of this work are to solve the **flow field**, **species transport**, and **chemical reaction** to analyze the combustion behavior.
-
----
-
-# 🔥 Project Objectives
-
-## 1. Solve the Flow Field  
-We solve the **2D Navier–Stokes equations** using a **first-order fractional-step method** to compute:
+### Solve the Flow Field  
+We solve the 2D Navier–Stokes equations using a first-order fractional-step method to compute:
 
 - \( u(x, y) \) — horizontal velocity  
 - \( v(x, y) \) — vertical velocity  
