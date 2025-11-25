@@ -77,6 +77,6 @@ pip install -r requirements.txt
 
 jupyter notebook
 
-## # Run a full simulation without notebooks
+### Run a full simulation without notebooks
 
 python examples/run_full_simulation.py
