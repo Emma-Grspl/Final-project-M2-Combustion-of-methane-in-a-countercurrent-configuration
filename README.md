@@ -9,18 +9,14 @@ This project simulates methane–air combustion in a counterflow configuration. 
 The goals of this work are to solve the flow field, species transport, and chemical reaction to analyze the combustion behavior.
 
 ## Project Objectives
-
 ### Solve the Flow Field  
+
 We solve the 2D Navier–Stokes equations using a first-order fractional-step method to compute:
 
-- \( u(x, y) \) — horizontal velocity  
-- \( v(x, y) \) — vertical velocity  
+- u(x, y) — horizontal velocity  
+- v(x, y) — vertical velocity  
 
-From the velocity field, we compute the **strain rate** on the left wall:
-
-\[
-a = \frac{\partial v}{\partial y}
-\]
+From the velocity field, we compute the strain rate on the left wall: $ a = \frac{\partial v}{\partial y} $
 
 This is essential to understand fluid–wall interactions and shear dynamics.
 
