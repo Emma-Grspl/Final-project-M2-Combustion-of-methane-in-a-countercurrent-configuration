@@ -83,8 +83,4 @@ pip install -r requirements.txt
 
 ### Run notebooks
 
-jupyter notebook
-
-### Run a full simulation without notebooks
-
-python examples/run_full_simulation.py
+All notebooks were made on Jupyter Notebook
