@@ -46,11 +46,15 @@ combustion-counterflow/
 │       ├── navier_stokes.py
 │       ├── transport.py
 │       └── combustion.py
+│       └── analysis.py
 │
 ├── notebook/
 │   ├── 01_velocity_field.ipynb
 │   ├── 02_transport_N2.ipynb
 │   └── 03_combustion.ipynb
+│   └── 04_analysis.ipynb
+│   └── raw notebook/
+│       └── Final_Project_Combustion_Methane
 │
 ├── examples/
 │   └── run_full_simulation.py
