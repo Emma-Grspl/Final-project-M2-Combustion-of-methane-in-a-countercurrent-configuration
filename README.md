@@ -34,6 +34,10 @@ We simulate the transport and reaction of all key species:
 - H20  
 The temperature field is then computed from the reaction terms. For a methane–air flame, the expected peak temperature is 1700–2500 K, providing a reference for validation.
 
+### Final_Project_Combusion_Methane.ipynb
+
+All the details of this work with the single-block code are in this notebook. If you want more information on the physics involved, I encourage you to read it. In particular, to understand all the equations and notations used throughout this project
+
 ## Project Structure
 ```bash
 combustion-counterflow/
